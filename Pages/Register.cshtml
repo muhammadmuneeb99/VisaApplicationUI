@@ -1,0 +1,68 @@
+﻿@page
+@model VisaApplicationUI.Pages.RegisterModel
+@{
+	ViewData["Title"] = "Sign Up Page";
+}
+
+<div class="container">
+	<form method="post">
+		<div class="row">
+			<div class="col-25">
+				<label for="Name">Name</label>
+			</div>
+			<div class="col-75">
+				<input asp-for="addApplicantInformationModel.Name" placeholder="Your Name..">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="Username">Username</label>
+			</div>
+			<div class="col-75">
+				<input asp-for="@Model.addApplicantInformationModel.Username" placeholder="Your Username..">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="ContactNo">Contact No</label>
+			</div>
+			<div class="col-75">
+				<input asp-for="@Model.addApplicantInformationModel.ContactNo" placeholder="Your ContactNo..">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="Email">Email</label>
+			</div>
+			<div class="col-75">
+				<input asp-for="@Model.addApplicantInformationModel.Email" placeholder="Your Email..">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="Password">Password</label>
+			</div>
+			<div class="col-75">
+				<input asp-for="@Model.addApplicantInformationModel.Password" placeholder="Your Password.." type="password">
+			</div>
+		</div>
+
+		<div class="row">
+			<input type="submit" value="Register" style="margin-top:10px;">
+		</div>
+
+		@if (ViewData["Error"] != null)
+		{
+			<div class="red">
+				<p><strong>Error:</strong> @ViewData["Error"].ToString()</p>
+			</div>
+		}
+		@if (TempData["Success"] != null)
+		{
+			<div class="green">
+				<p><strong>Success:</strong> @TempData["Success"].ToString()</p>
+			</div>
+		}
+
+	</form>
+</div>

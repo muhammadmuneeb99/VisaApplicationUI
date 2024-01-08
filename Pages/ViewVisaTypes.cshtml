@@ -1,0 +1,27 @@
+﻿@page
+@model VisaApplicationUI.Pages.ViewVisaTypesModel
+@{
+	ViewData["Title"] = "Visa Types";
+}
+
+<div class="container">
+
+
+    <table>
+        <tr>
+            <th>Visa Type Id</th>
+            <th>Visa Type</th>
+        </tr>
+        @foreach (var item in Model._visaTypes)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem =>item.PkVisaTypeId)</td>
+                <td>@Html.DisplayFor(modelItem =>item.VisaType)</td>
+            </tr>
+        }
+        
+       
+    </table>
+
+</div>
+
